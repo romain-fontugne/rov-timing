@@ -12,9 +12,9 @@ involved in the ROV process.
 
 ## Experiments
 To better understand ROA propagation and how BGP may be affected, we are creating frequent ROAs and BGP announcements for the following prefixes:
-- `list of prefixes and period of time   TBD`
+- `TBD: list of prefixes and period of time`
 
-
+## Results
 Results from our experiments will be publicly available at https://github.com/romain-fontugne/rov-timing.
 
 ## Inquiries
@@ -23,5 +23,5 @@ For any inquiries please contact: romain@psg.com
 ## References
 - Geoff Huston, HKNOG - https://www.potaroo.net/presentations/2020-09-25-rpki-hknog.pdf
 - draft-ietf-sidrops-rpki-rov-timing-04: https://datatracker.ietf.org/doc/html/draft-ietf-sidrops-rpki-rov-timing-03.txt
-- Kistoff et al. IM - https://archive.psg.com/201029.imc-rp.pdf
+- Kistoff et al. IMC'20 - https://archive.psg.com/201029.imc-rp.pdf
 
