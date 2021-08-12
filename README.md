@@ -23,15 +23,11 @@ We will be collecting metrics from both RPKI repositories and BGP, as detailed i
 
 We will need access to the RIR portal or API to create ROAs for the assigned prefixes.
 
-## Duration of the experiment
-
-3 months. After which resources can be reclaimed and any associated RPKI object can be revoked.
-
 ## Results
 Results from our experiments will be publicly available at https://github.com/romain-fontugne/rov-timing.
 
 ## Inquiries
-For any inquiries please contact: romain@psg.com
+For any inquiries please contact: romain@iij.ad.jp
 
 ## References
 - Geoff Huston, HKNOG - https://www.potaroo.net/presentations/2020-09-25-rpki-hknog.pdf
