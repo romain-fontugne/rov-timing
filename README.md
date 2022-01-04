@@ -11,6 +11,9 @@ questions are left unanswered about the interactions of the different pieces
 involved in the ROV process.
 
 ## Experiments
+
+### First
+
 To better understand the challenges affecting ROA propagation and the impact on BGP, and to have a global understanding, we need to generate ROAs for multiple prefixes at the different RIRs.
 
 The following experimental resources will be required from each RIR:
@@ -23,11 +26,19 @@ We will be collecting metrics from both RPKI repositories and BGP, as detailed i
 
 We will need access to the RIR portal or API to create ROAs for the assigned prefixes.
 
+### Second
+
+To compare the control and data planes during ROV flux, a selection of /24s will be announced by various providers.  Traceroutes from Atlas will be recorded while ROAs are fluxed at the NCC.
+
+The following experimental resources will be required from the NCC:
+Eight /24s IPv4
+Eight /48s IPv6
+
 ## Results
-Results from our experiments will be publicly available at https://github.com/romain-fontugne/rov-timing.
+Results from our experiments will be publicly available at https://github.com/romain-fontugne/rov-timing.  And, of course, we hope the resulting paper(s) will be accepted at significant venues.
 
 ## Inquiries
-For any inquiries please contact: romain@iij.ad.jp
+For any inquiries please contact: romain@iij.ad.jp, pelsser@unistra.fr, & randy@psg.com
 
 ## References
 - Geoff Huston, HKNOG - https://www.potaroo.net/presentations/2020-09-25-rpki-hknog.pdf
