@@ -17,8 +17,8 @@ involved in the ROV process.
 To better understand the challenges affecting ROA propagation and the impact on BGP, and to have a global understanding, we need to generate ROAs for multiple prefixes at the different RIRs.
 
 The following experimental resources will be required from each RIR:
-Two /24 IPv4
-Two /48 IPv6
+- Two /24 IPv4
+- Two /48 IPv6
 
 These resources will be announced in BGP by AS numbers used for research purposes. There will be no end-hosts on the prefixes. Ingress and egress traffic towards and from the underlying network will be blackholed.
 
@@ -30,9 +30,11 @@ We will need access to the RIR portal or API to create ROAs for the assigned pre
 
 To compare the control and data planes during ROV flux, a selection of /24s will be announced by various providers.  Traceroutes from Atlas will be recorded while ROAs are fluxed at the NCC.
 
-The following experimental resources will be required from the NCC:
-Eight /24s IPv4
-Eight /48s IPv6
+The following experimental resources from the NCC will be used:
+- Eight /24s IPv4 from 151.216.32.0/21
+- Eight /48s IPv6
+
+Frome these prefixes, we will generate between 100 Kpps and 200 Kpps traffic using FlashRoute (https://github.com/lambdahuang/FlashRoute).
 
 ## Results
 Results from our experiments will be publicly available at https://github.com/romain-fontugne/rov-timing.  And, of course, we hope the resulting paper(s) will be accepted at significant venues.
