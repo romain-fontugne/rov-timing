@@ -34,7 +34,7 @@ The following experimental resources from the NCC will be used:
 - Eight /24s IPv4 from 151.216.32.0/21
 - Eight /48s IPv6
 
-Frome these prefixes, we will generate between 100 Kpps and 200 Kpps traffic using FlashRoute (https://github.com/lambdahuang/FlashRoute).
+From these prefixes, we will generate between 100 Kpps and 200 Kpps traffic using FlashRoute (https://github.com/lambdahuang/FlashRoute).
 
 ## Results
 Results from our experiments will be publicly available at https://github.com/romain-fontugne/rov-timing.  And, of course, we hope the resulting paper(s) will be accepted at significant venues.
