@@ -79,10 +79,15 @@ for all of them.
 
 The above experiments have been monitored in the management (RPKI), control (BGP), and data (traceroute) planes.
 
+### RPKI
 The time of our ROA creation/deletion requests to RIRs is available here: TODO
 
+The ROA and CRL files produced by RIRs are available at [RPKIviews](http://www.rpkiviews.org/)
+
+### BGP
 The BGP data is available in [RIPE RIS](https://www.ripe.net/analyse/internet-measurements/routing-information-service-ris) and [Routeviews](https://www.routeviews.org/).
 
+### Traceroute
 For the data plane, we performed traceroutes every 15 minutes from RIPE Atlas with probes
 in 6 different ASes. The data is available via Atlas's API:
 
