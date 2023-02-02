@@ -1,0 +1,91 @@
+#!/usr/bin/env python2
+#
+# $Id$
+#
+# Copyright (C) 2015-2016  Parsons Government Services ("PARSONS")
+# Portions copyright (C) 2014  Dragon Research Labs ("DRL")
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notices and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND PARSONS AND DRL DISCLAIM ALL
+# WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS.  IN NO EVENT SHALL
+# PARSONS OR DRL BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR
+# CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS
+# OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
+# NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION
+# WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+"""
+Pretty-print the content of a ROA.  Does NOT attempt to verify the
+signature.
+"""
+
+import rpki.config
+import rpki.POW
+
+class ROA(rpki.POW.ROA):                # pylint: disable=W0232
+
+    v4_prefixes = None
+    v6_prefixes = None
+
+    @staticmethod
+    def _format_prefix(p):
+        if p[2] in (None, p[1]):
+            return "%s/%d" % (p[0], p[1])
+        else:
+            return "%s/%d-%d" % (p[0], p[1], p[2])
+
+    def parse(self):
+        self.extractWithoutVerifying()  # pylint: disable=E1101
+        v4, v6 = self.getPrefixes()     # pylint: disable=E1101
+        self.v4_prefixes = [self._format_prefix(p) for p in (v4 or ())]
+        self.v6_prefixes = [self._format_prefix(p) for p in (v6 or ())]
+
+cfg = rpki.config.argparser(doc = __doc__)
+cfg.argparser.add_argument("--brief", action = "store_true", help = "show only ASN and prefix(es)")
+cfg.argparser.add_argument("--cms", action = "store_true", help = "print text representation of entire CMS blob")
+cfg.argparser.add_argument("--signing-time", action = "store_true", help = "show SigningTime in brief mode")
+cfg.argparser.add_argument("--list", action = "store_true", help = "list ROA attributes")
+cfg.argparser.add_argument("roas", nargs = "+", type = ROA.derReadFile, help = "ROA(s) to print") # pylint: disable=E1101
+args = cfg.argparser.parse_args()
+
+for roa in args.roas:
+    roa.parse()
+    if args.list:
+        for cer in roa.certs():
+            for prefix in roa.v4_prefixes + roa.v6_prefixes:
+                print roa.signingTime(), cer.getSerial(),roa.getASID(), prefix
+    elif args.brief:
+        if args.signing_time:
+            print roa.signingTime(),
+        print roa.getASID(), " ".join(roa.v4_prefixes + roa.v6_prefixes)
+        import IPython
+        IPython.embed()
+    else:
+        print "ROA Version:   ", roa.getVersion()
+        print "SigningTime:   ", roa.signingTime()
+        print "asID:          ", roa.getASID()
+        if roa.v4_prefixes:
+            print " addressFamily:", 1
+            for prefix in roa.v4_prefixes:
+                print "     IPAddress:", prefix
+        if roa.v6_prefixes:
+            print " addressFamily:", 2
+            for prefix in roa.v6_prefixes:
+                print "     IPAddress:", prefix
+        for cer in roa.certs():
+            print " SerialNumber:", cer.getSerial()
+        if args.cms:
+            print "##### ROA pprint #####"
+            print roa.pprint()
+
+            for cer in roa.certs():
+                print "##### CER pprint #####"
+                print cer.pprint()
+            for crl in roa.crls():
+                print "##### CRL pprint #####"
+                print crl.pprint()
+        print

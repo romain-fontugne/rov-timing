@@ -1,0 +1,18 @@
+{
+"url": "https://resources.apnic.net/MYNET-XX/resources/routes/index.html",
+"credentials": {
+    "username": "foo@example.com",
+    "password": "bar",
+    "totp_secret": "foobar"
+    },
+"resources": {
+    "prefix" : [ "192.168.0.0/16", "10.0.0.0/8"],
+    "asn": [ "0" ]
+    },
+"log": { 
+    "results": "roa_timings.csv",
+    "errors": "errors.log"
+    }
+}
+
+

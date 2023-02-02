@@ -1,0 +1,1 @@
+openssl crl -inform DER -text -noout -in $1

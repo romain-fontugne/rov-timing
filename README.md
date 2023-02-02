@@ -80,7 +80,7 @@ for all of them.
 The above experiments have been monitored in the management (RPKI), control (BGP), and data (traceroute) planes.
 
 ### RPKI
-The time of our ROA creation/deletion requests to RIRs is available here: TODO
+The time of our ROA creation/deletion requests to RIRs is available here: [data/](data/)
 
 The ROA and CRL files produced by RIRs are available at [RPKIviews](http://www.rpkiviews.org/)
 
@@ -116,7 +116,7 @@ in 6 different ASes. The data is available via Atlas's API:
 
 
 ## Source code
-The source code used for these experiments is available at: TODO
+The source code used for these experiments is available in the [code directory](code/)
 
 ## Inquiries
 For any inquiries please contact: romain@iij.ad.jp, pelsser@unistra.fr, & randy@psg.com
