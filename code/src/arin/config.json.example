@@ -1,0 +1,20 @@
+{
+"urls": {
+    "create": "https://reg.arin.net/rest/roa/{orgid};resourceClass=AR",
+    "list":  "https://reg.arin.net/rest/roa/{orgid}",
+    "delete": "https://reg.arin.net/rest/roa/spec/{roa_handle}"
+},
+"credentials": {
+    "orgid": "MYORGID-1",
+    "keypair": "keypair.pem" ,
+    "apikey": "API-XXX-XXX-XXX-XXX"
+    },
+"resources": {
+    "prefix" : [ "192.168.0.0/24" ],
+    "asn": [ "1234", "666" ]
+    },
+"log": { 
+    "timing": "roa_timings.csv",
+    "error": "errors.log"
+    }
+}

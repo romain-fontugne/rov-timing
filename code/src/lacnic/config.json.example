@@ -1,0 +1,15 @@
+{
+"url": "https://milacnic.lacnic.net/lacnic/entity/rpki?org=MY-ORG",
+"credentials": {
+    "username": "USER",
+    "password": ""
+    },
+"resources": {
+    "prefix" : [ "192.168.0.0/24" ],
+    "asn": [ "1234", "666" ]
+    },
+"log": { 
+    "timing": "roa_timings.csv",
+    "error": "errors.log"
+    }
+}

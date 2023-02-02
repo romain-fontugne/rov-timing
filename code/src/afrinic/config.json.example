@@ -1,0 +1,20 @@
+{
+"urls": {
+    "login": "https://my.afrinic.net/login",
+    "add": "https://my.afrinic.net/resources/rpki/roa/add",
+    "delete": "https://my.afrinic.net/resources/rpki/roa/view?id={id}"
+},
+"credentials": {
+    "username": "MY_USERNAME",
+    "password": "",
+    "firefox_profile": "~/rov-timing/code/src/afrinic/firefox_profile/"
+    },
+"resources": {
+    "prefix" : [ "192.168.0.0/24" ],
+    "asn": [ "1234", "666" ]
+    },
+"log": { 
+    "timing": "roa_timings.csv",
+    "error": "errors.log"
+    }
+}

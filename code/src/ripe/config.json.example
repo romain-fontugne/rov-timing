@@ -1,0 +1,18 @@
+{
+"auth_url": "https://access.ripe.net/",
+"url": "https://my.ripe.net/api/rpki/roas/publish",
+"credentials": {
+    "username": "user@example.com",
+    "password": "",
+    "totp_secret": "",
+    "active_membership": "org:ORG-MYORG-RIPE" 
+    },
+"resources": {
+    "prefix" : [ "192.168.0.0/24" ],
+    "asn": [ "1234", "666" ]
+    },
+"log": { 
+    "timing": "roa_timings.csv",
+    "error": "errors.log"
+    }
+}
