@@ -1,6 +1,6 @@
 # RPKI Time-of-Flight: Tracking Delays in the Management, Control, and Data Planes
 
-See the complete report here: [Fontugne et al. PAM'23](https://www.iijlab.net/en/en/members/romain/pdf/romain_pam23.pdf)
+See the complete report here: [Fontugne et al. PAM'23](https://www.iijlab.net/en/members/romain/pdf/romain_pam23.pdf)
 
 ## Summary
 
@@ -122,7 +122,7 @@ The source code used for these experiments is available in the [code directory](
 For any inquiries please contact: romain@iij.ad.jp, pelsser@unistra.fr, & randy@psg.com
 
 ## Further reading
-- Fontugne et al. PAM'23 - https://www.iijlab.net/en/en/members/romain/pdf/romain_pam23.pdf
+- Fontugne et al. PAM'23 - https://www.iijlab.net/en/members/romain/pdf/romain_pam23.pdf
 - Geoff Huston, HKNOG - https://www.potaroo.net/presentations/2020-09-25-rpki-hknog.pdf
 - draft-ietf-sidrops-rpki-rov-timing-04: https://datatracker.ietf.org/doc/html/draft-ietf-sidrops-rpki-rov-timing-03.txt
 - Kistoff et al. IMC'20 - https://archive.psg.com/201029.imc-rp.pdf
