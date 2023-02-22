@@ -116,7 +116,7 @@ in 6 different ASes. The data is available via Atlas's API:
 
 
 ## Source code
-The source code used for these experiments is available in the [code directory](code/)
+The source code used for these experiments is available in the [code](code/) and [historical-analysis](historical-analysis/) directories.
 
 ## Inquiries
 For any inquiries please contact: romain@iij.ad.jp, pelsser@unistra.fr, & randy@psg.com
